@@ -29,11 +29,18 @@
         android:textColor="@color/ibroad_greyish_brown"
         android:textSize="16sp" />
 
+    <include
+        android:id="@+id/ibroad_audit"
+        layout="@layout/ibroad_audit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_title" />
+
     <EditText
         android:id="@+id/et_info"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/tv_title"
+        android:layout_below="@id/ibroad_audit"
         android:layout_marginTop="15dp"
         android:background="@drawable/ibroad_white_right_corner_bg"
         android:gravity="left|top"

@@ -130,13 +130,13 @@ public class AttachAdapter extends BaseAdapter {
         final Attach attach = list.get(position);
 
         // 获取任务列表时，如果state为默认，并且isTemp为true，则代表附件处于上传失败状态
-        if (attach.isTemp && attach.state == Constants.FILE_STATE_DEFAULT) {
+        if (attach.isTemp && attach.state == Constants.FILE_STATE_SUCCESS) {
             attach.state = Constants.FILE_STATE_ERROR;
         }
 
         switch (attach.state) {
             // 默认状态
-            case Constants.FILE_STATE_DEFAULT:
+            case Constants.FILE_STATE_SUCCESS:
                 break;
             // 正在上传
             case Constants.FILE_STATE_LOADING:

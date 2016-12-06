@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/ibroad_gray_bg"
+    android:paddingTop="15dp">
+
+    <TextView
+        android:id="@+id/tv_audit_result_tip"
+        android:layout_width="75dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_title"
+        android:layout_marginTop="5dp"
+        android:text="评审结果："
+        android:textColor="@color/ibroad_warm_grey"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/tv_audit_result"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_title"
+        android:layout_marginTop="5dp"
+        android:layout_toRightOf="@id/tv_audit_result_tip"
+        android:text="未通过"
+        android:textColor="@color/ibroad_grapefruit"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/tv_audit_name_tip"
+        android:layout_width="75dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_audit_result"
+        android:layout_marginTop="5dp"
+        android:text="评审人："
+        android:textColor="@color/ibroad_warm_grey"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/tv_audit_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_audit_result"
+        android:layout_marginTop="5dp"
+        android:layout_toRightOf="@id/tv_audit_result_tip"
+        android:text="张杰诚"
+        android:textColor="@color/ibroad_greyish_brown"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/tv_audit_comment_tip"
+        android:layout_width="75dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_audit_name"
+        android:layout_marginTop="5dp"
+        android:text="评审留言："
+        android:textColor="@color/ibroad_warm_grey"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/tv_audit_comment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_audit_name"
+        android:layout_marginTop="5dp"
+        android:layout_toRightOf="@id/tv_audit_result_tip"
+        android:text="图片拍摄位置错误，不符合要求"
+        android:textColor="@color/ibroad_greyish_brown"
+        android:textSize="14sp" />
+
+</RelativeLayout>

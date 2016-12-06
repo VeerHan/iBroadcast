@@ -39,11 +39,18 @@
         android:textColor="@color/ibroad_warm_grey"
         android:textSize="14sp" />
 
+    <include
+        android:id="@+id/ibroad_audit"
+        layout="@layout/ibroad_audit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_desc" />
+
     <ListView
         android:id="@+id/listView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/tv_desc"
+        android:layout_below="@id/ibroad_audit"
         android:layout_marginTop="15dp"
         android:divider="@null"
         android:dividerHeight="4dp" />

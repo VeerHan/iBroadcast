@@ -21,6 +21,23 @@
             android:paddingBottom="6dp"
             android:paddingLeft="6dp"
             android:src="@drawable/ibroad_img_delete" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="25dp"
+            android:layout_alignParentBottom="true"
+            android:alpha="0.6"
+            android:background="@android:color/black" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="25dp"
+            android:layout_alignParentBottom="true"
+            android:gravity="center"
+            android:singleLine="true"
+            android:text="5个批注"
+            android:textColor="@android:color/white"
+            android:textSize="13sp" />
     </RelativeLayout>
 
     <EditText
