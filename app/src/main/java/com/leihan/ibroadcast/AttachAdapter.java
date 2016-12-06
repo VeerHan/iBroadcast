@@ -4,9 +4,10 @@ import android.content.Context;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.EditText;
+import android.widget.ImageView;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
 /**
@@ -15,14 +16,19 @@ import java.util.List;
  */
 public class AttachAdapter extends BaseAdapter {
 
-    private static final String TAG = AttachAdapter.class.getSimpleName();
     private List<Attach> list;
-    private int maxCount;
+    private int maxCount; // 图片的最大数量
+    private boolean showInfo; // 是否显示图片文字说明
+    private Attach addAttach; // 用于图片数量不满足时"添加图片"的item
     private Context context;
 
-    public AttachAdapter(Context context, int maxCount) {
+    public AttachAdapter(Context context, int maxCount, boolean showInfo) {
         this.context = context;
+        this.maxCount = maxCount;
+        this.showInfo = showInfo;
         this.list = new ArrayList<>();
+        addAttach = new Attach();
+        addAttach.fileType = Constants.FILE_TYPE_ADD_ICON;
     }
 
     @Override
@@ -67,34 +73,6 @@ public class AttachAdapter extends BaseAdapter {
         }
     }
 
-    /**
-     * 根据元素的id查找对应元素
-     */
-    public Attach queryByUid(String uid) {
-        Iterator<Attach> iterator = list.iterator();
-        while (iterator.hasNext()) {
-            Attach subTask = iterator.next();
-            if (uid.equals(subTask.uid)) {
-                return subTask;
-            }
-        }
-        return null;
-    }
-
-    /**
-     * 根据元素的id删除对应元素
-     */
-    public void deleteByUid(String uid) {
-        Iterator<Attach> iterator = list.iterator();
-        while (iterator.hasNext()) {
-            Attach attach = iterator.next();
-            if (uid.equals(attach.uid)) {
-                iterator.remove();
-                notifyDataSetChanged();
-                return;
-            }
-        }
-    }
 
     /**
      * 设置数据源
@@ -108,15 +86,19 @@ public class AttachAdapter extends BaseAdapter {
         notifyDataSetChanged();
     }
 
-    /**
-     * 获取数据源
-     */
-    public List<Attach> getDataSet() {
-        return list;
+    @Override
+    public void notifyDataSetChanged() {
+        if (list.contains(addAttach)) {
+            list.remove(addAttach);
+        }
+        if (list.size() < maxCount) {
+            list.add(addAttach);
+        }
+        super.notifyDataSetChanged();
     }
 
     /**
-     * 获取Fs图片类型文件的集合，用于图片预览
+     * 获取图片类型集合，用于图片预览
      *
      * @return
      */
@@ -135,8 +117,11 @@ public class AttachAdapter extends BaseAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
         final ViewHolder viewHolder;
         if (convertView == null) {
-            // convertView = View.inflate(context, , null);
+            convertView = View.inflate(context, R.layout.item_listview_attach, null);
             viewHolder = new ViewHolder();
+            viewHolder.ivImg = (ProImageView) convertView.findViewById(R.id.iv_img);
+            viewHolder.ivIcon = (ImageView) convertView.findViewById(R.id.iv_icon);
+            viewHolder.etInfo = (EditText) convertView.findViewById(R.id.et_info);
             convertView.setTag(viewHolder);
         } else {
             viewHolder = (ViewHolder) convertView.getTag();
@@ -167,5 +152,8 @@ public class AttachAdapter extends BaseAdapter {
 
 
     public static class ViewHolder {
+        ProImageView ivImg;
+        ImageView ivIcon;
+        EditText etInfo;
     }
 }

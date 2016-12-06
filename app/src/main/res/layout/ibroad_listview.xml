@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/ibroad_gray_bg"
+    android:paddingLeft="20dp"
+    android:paddingRight="20dp"
+    android:paddingTop="15dp">
+
+    <TextView
+        android:id="@+id/tv_num"
+        android:layout_width="22dp"
+        android:layout_height="22dp"
+        android:background="@drawable/round_grey_bg"
+        android:gravity="center"
+        android:text="1"
+        android:textColor="@color/ibroad_greyish_brown"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_toRightOf="@id/tv_num"
+        android:gravity="center"
+        android:singleLine="true"
+        android:text="拍摄工作区情况"
+        android:textColor="@color/ibroad_greyish_brown"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/tv_desc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_title"
+        android:layout_marginTop="5dp"
+        android:text="拍摄店内库存货架，店内卫生区（需提供2张照片）"
+        android:textColor="@color/ibroad_warm_grey"
+        android:textSize="14sp" />
+
+    <ListView
+        android:id="@+id/listView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/tv_desc"
+        android:layout_marginTop="15dp"
+        android:divider="@null"
+        android:dividerHeight="4dp" />
+
+</RelativeLayout>
