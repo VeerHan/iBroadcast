@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/ibroad_gray_bg"
@@ -40,4 +41,95 @@
         android:textSize="14sp" />
 
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/tv_desc"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/ibroad_white_right_corner_bg"
+        android:padding="0dp">
+
+        <TextView
+            android:id="@+id/record_duration_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="56dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:text="00:00"
+            android:textColor="@color/ibroad_warm_grey_two"
+            android:textSize="40sp" />
+
+        <SeekBar
+            android:id="@+id/seek_progress_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/record_duration_txt"
+            android:layout_marginLeft="35dp"
+            android:layout_marginRight="35dp"
+            android:layout_marginTop="6dp"
+            tools:progress="40" />
+
+
+        <RelativeLayout
+            android:id="@+id/record_control_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/seek_progress_bar"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="18dp">
+
+            <ImageView
+                android:id="@+id/record_control_start_btn"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/ibroad_voice_record_start_record" />
+
+
+            <ImageView
+                android:id="@+id/record_control_stop_btn"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/ibroad_voice_record_start_play"
+                android:visibility="gone" />
+
+            <ImageView
+                android:id="@+id/voice_play_btn"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/ibroad_voice_record_stop_play"
+                android:visibility="gone" />
+
+            <ImageView
+                android:id="@+id/voice_pause_btn"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/ibroad_voice_record_stop_record"
+                android:visibility="gone" />
+        </RelativeLayout>
+
+        <ImageView
+            android:id="@+id/iv_reset"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_below="@id/record_control_layout"
+            android:layout_marginBottom="8.5dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="22.5dp"
+            android:src="@drawable/ibroad_voice_record_reset" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:layout_alignBaseline="@id/iv_reset"
+            android:layout_below="@id/record_control_layout"
+            android:layout_marginLeft="3dp"
+            android:layout_marginTop="22.5dp"
+            android:layout_toRightOf="@id/iv_reset"
+            android:gravity="center_vertical"
+            android:text="重新录制"
+            android:textColor="@color/ibroad_warm_grey"
+            android:textSize="12sp" />
+    </RelativeLayout>
 </RelativeLayout>

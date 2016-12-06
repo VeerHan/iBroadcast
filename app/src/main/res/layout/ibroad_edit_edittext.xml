@@ -35,7 +35,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/tv_title"
         android:layout_marginTop="15dp"
-        android:background="@drawable/iborad_white_right_corner_bg"
+        android:background="@drawable/ibroad_white_right_corner_bg"
         android:gravity="left|top"
         android:hint="请填写本月月报"
         android:maxLines="3"
